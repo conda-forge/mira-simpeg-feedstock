@@ -18,12 +18,12 @@ build:
 
 requirements:
   host:
-    - python >={{ python_min }},<{{ python_max }}
+    - python {{ python_min }}
     - poetry-core >=1.0.0
     - setuptools
     - pip
   run:
-    - python {{ python_min }}
+    - python >={{ python_min }},<{{ python_max }}
     - discretize >=0.8.0
     - empymod >=2.0.0
     - geoana
