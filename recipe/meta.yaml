@@ -1,7 +1,7 @@
 {% set name = "mira-simpeg" %}
 {% set version = "0.19.0.8" %}
-{% set python_min = 3.10 %}
-{% set python_max = 3.11 %}
+{% set python_min = "3.10" %}
+{% set python_max = "3.11" %}
 
 package:
   name: {{ name|lower }}
