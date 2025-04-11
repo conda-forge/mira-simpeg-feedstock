@@ -1,48 +1,73 @@
 {% set name = "mira-simpeg" %}
-{% set version = "0.19.0.8" %}
+{% set pypi_name = name | replace('-', '_') %}
+{% set version = "0.21.2.1" %}
 {% set python_min = "3.10" %}
-{% set python_max = "3.11" %}
+{% set python_max = "3.12" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/MiraGeoscience/simpeg/archive/v0.19.0.8+mira.tar.gz
-  sha256: f48e21e1e3d1df79be0baad2bc0b91f83714ddf53780a6849f9a60f9418a735b
+  url: https://pypi.org/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/{{ pypi_name }}-{{ version }}.tar.gz
+  sha256: 460f86cbfdc1defe86da085ba3b8dd84516e8346c58bd3f1b48edc4290b0276e
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
     - python {{ python_min }}
-    - poetry-core >=1.0.0
-    - setuptools
     - pip
+    - setuptools >=64
+    - setuptools_scm >=8
   run:
     - python >={{ python_min }},<{{ python_max }}
-    - discretize >=0.8.0
+    - discretize >=0.10.0
     - empymod >=2.0.0
-    - geoana
-    - geoh5py
+    - geoana >=0.5.0
+    - geoh5py >=0.1.0,<0.11.dev
+    - libdlf
     - matplotlib-base
     - numpy >=1.20
     - pandas
-    - pymatsolver >=0.2
+    - pymatsolver >=0.2,<0.3
     - scikit-learn >=1.2
-    - scipy >=1.8.0
+    - scipy >=1.8
   run_constrained:
-    - dask-core *
-    - distributed *
+    - choclo >=0.1.0
     - fsspec >=0.3.3
-    - zarr *
 
 test:
   imports:
-    - SimPEG
+    - simpeg
+    - simpeg.electromagnetics
+    - simpeg.electromagnetics.analytics
+    - simpeg.electromagnetics.frequency_domain
+    - simpeg.electromagnetics.natural_source
+    - simpeg.electromagnetics.natural_source.utils
+    - simpeg.electromagnetics.static
+    - simpeg.electromagnetics.static.resistivity
+    - simpeg.electromagnetics.static.induced_polarization
+    - simpeg.electromagnetics.static.spectral_induced_polarization
+    - simpeg.electromagnetics.static.utils
+    - simpeg.electromagnetics.time_domain
+    - simpeg.electromagnetics.utils
+    - simpeg.electromagnetics.viscous_remanent_magnetization
+    - simpeg.flow
+    - simpeg.flow.richards
+    - simpeg.potential_fields
+    - simpeg.potential_fields.gravity
+    - simpeg.potential_fields.magnetics
+    - simpeg.seismic
+    - simpeg.seismic.straight_ray_tomography
+    - simpeg.utils
+    - simpeg.utils.drivers
+    - simpeg.regularization
+    - simpeg.meta
+    - geoh5py
   commands:
     - pip check
   requires:
@@ -66,5 +91,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - SophieCurinier
-    - sebhmg
+    - conda-forge/geoh5py
