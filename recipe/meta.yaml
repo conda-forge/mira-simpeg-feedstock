@@ -19,30 +19,54 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - poetry-core >=1.0.0
-    - setuptools
     - pip
+    - setuptools >=64
+    - setuptools_scm >=8
   run:
     - python >={{ python_min }},<{{ python_max }}
-    - discretize >=0.8.0
+    - discretize >=0.10.0
     - empymod >=2.0.0
-    - geoana
-    - geoh5py
+    - geoana >=0.5.0
+    - geoh5py >=0.1.0,<0.11.dev
+    - libdlf
     - matplotlib-base
     - numpy >=1.20
     - pandas
-    - pymatsolver >=0.2
+    - pymatsolver >=0.2,<0.3
     - scikit-learn >=1.2
-    - scipy >=1.8.0
+    - scipy >=1.8
   run_constrained:
-    - dask-core *
-    - distributed *
+    - choclo >=0.1.0
     - fsspec >=0.3.3
-    - zarr *
 
 test:
   imports:
-    - SimPEG
+    - simpeg
+    - simpeg.electromagnetics
+    - simpeg.electromagnetics.analytics
+    - simpeg.electromagnetics.frequency_domain
+    - simpeg.electromagnetics.natural_source
+    - simpeg.electromagnetics.natural_source.utils
+    - simpeg.electromagnetics.static
+    - simpeg.electromagnetics.static.resistivity
+    - simpeg.electromagnetics.static.induced_polarization
+    - simpeg.electromagnetics.static.spectral_induced_polarization
+    - simpeg.electromagnetics.static.utils
+    - simpeg.electromagnetics.time_domain
+    - simpeg.electromagnetics.utils
+    - simpeg.electromagnetics.viscous_remanent_magnetization
+    - simpeg.flow
+    - simpeg.flow.richards
+    - simpeg.potential_fields
+    - simpeg.potential_fields.gravity
+    - simpeg.potential_fields.magnetics
+    - simpeg.seismic
+    - simpeg.seismic.straight_ray_tomography
+    - simpeg.utils
+    - simpeg.utils.drivers
+    - simpeg.regularization
+    - simpeg.meta
+    - geoh5py
   commands:
     - pip check
   requires:
