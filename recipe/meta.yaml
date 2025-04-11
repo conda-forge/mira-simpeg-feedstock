@@ -1,20 +1,20 @@
 {% set name = "mira-simpeg" %}
-{% set version = "0.19.0.8" %}
+{% set version = "0.21.2.1" %}
 {% set python_min = "3.10" %}
-{% set python_max = "3.11" %}
+{% set python_max = "3.12" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/MiraGeoscience/simpeg/archive/v0.19.0.8+mira.tar.gz
-  sha256: f48e21e1e3d1df79be0baad2bc0b91f83714ddf53780a6849f9a60f9418a735b
+  url: https://github.com/MiraGeoscience/simpeg/archive/v{{ version }}+mira.tar.gz
+  sha256: 430eec3e3a8dadd4787f63f2917bc9a0d853fb87562900b32955f71e9268b22d
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -66,5 +66,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - SophieCurinier
-    - sebhmg
+    - conda-forge/geoh5py
