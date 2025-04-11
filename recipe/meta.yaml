@@ -1,4 +1,5 @@
-{% set name = "mira_simpeg" %}
+{% set name = "mira-simpeg" %}
+{% set pypi_name = "mira_simpeg" %}
 {% set version = "0.21.2.1" %}
 {% set python_min = "3.10" %}
 {% set python_max = "3.12" %}
@@ -8,7 +9,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/{{ pypi_name }}-{{ version }}.tar.gz
   sha256: 460f86cbfdc1defe86da085ba3b8dd84516e8346c58bd3f1b48edc4290b0276e
 
 build:
