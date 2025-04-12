@@ -7,7 +7,7 @@ Home: https://docs.simpeg.xyz/
 
 Package license: MIT
 
-Summary: Mira Geoscience fork of SimPEG - Simulation and Parameter Estimation in Geophysics
+Summary: Mira Geoscience fork of SimPEG: Simulation and Parameter Estimation in Geophysics
 
 Development: https://github.com/MiraGeoscience/simpeg
 

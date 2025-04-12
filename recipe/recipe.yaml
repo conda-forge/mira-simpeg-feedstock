@@ -1,9 +1,8 @@
 context:
   name: mira-simpeg
   pypi_name: mira_simpeg
-  version: 0.21.2.1
+  version: 0.21.2.2
   python_min: 3.10
-  python_max: 3.12
 
 package:
   name: ${{ name|lower }}
@@ -11,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ pypi_name[0] }}/${{ pypi_name }}/${{ pypi_name }}-${{ version }}.tar.gz
-  sha256: 460f86cbfdc1defe86da085ba3b8dd84516e8346c58bd3f1b48edc4290b0276e
+  sha256: 97397d60fa1ff04a7070fd9b622924d0a5f0c6c8aff3e6a5f1d3eb9a07188d5a
 
 build:
-  number: 3
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -25,7 +24,7 @@ requirements:
     - setuptools >=64
     - setuptools_scm >=8
   run:
-    - python >=${{ python_min }},<${{ python_max }}
+    - python >=${{ python_min }}
     - discretize >=0.10.0
     - empymod >=2.0.0
     - geoana >=0.5.0
@@ -34,7 +33,7 @@ requirements:
     - matplotlib-base
     - numpy >=1.20
     - pandas
-    - pymatsolver >=0.2,<0.3
+    - pymatsolver >=0.3,<0.4.dev
     - scikit-learn >=1.2
     - scipy >=1.8
   run_constraints:
