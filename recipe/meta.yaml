@@ -1,5 +1,5 @@
 {% set name = "mira-simpeg" %}
-{% set pypi_name = name | replace('-', '_') %}
+{% set pypi_name = "mira_simpeg" %}
 {% set version = "0.21.2.1" %}
 {% set python_min = "3.10" %}
 {% set python_max = "3.12" %}
@@ -15,7 +15,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
