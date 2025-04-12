@@ -15,7 +15,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 2
 
 requirements:
   host:
@@ -84,8 +84,7 @@ about:
     Warning:
     This is a fork created by Mira Geoscience.
   license: MIT
-  license_file: 
-    - LICENSE
+  license_file: LICENSE
   doc_url: https://docs.simpeg.xyz/
   dev_url: https://github.com/MiraGeoscience/simpeg
 
