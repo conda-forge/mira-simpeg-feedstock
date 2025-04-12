@@ -7,18 +7,17 @@ Home: https://docs.simpeg.xyz/
 
 Package license: MIT
 
-Summary: Mira Geoscience fork of SimPEG: Simulation and Parameter Estimation in Geophysics
+Summary: Mira Geoscience fork of SimPEG - Simulation and Parameter Estimation in Geophysics
 
 Development: https://github.com/MiraGeoscience/simpeg
 
 Documentation: https://docs.simpeg.xyz/
 
-Simulation and Parameter Estimation in Geophysics - A python package for simulation and
+Simulation and Parameter Estimation in Geophysics - A python package for simulation and 
 gradient based parameter estimation in the context of geophysical applications.
 
 Warning:
 This is a fork created by Mira Geoscience.
-
 
 Current build status
 ====================
