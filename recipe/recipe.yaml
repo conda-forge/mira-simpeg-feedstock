@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: mira-simpeg
   pypi_name: mira_simpeg
-  version: "0.23.0.1"
+  version: "0.23.0.2"
   python_min: '3.10'
 
 package:
@@ -12,7 +12,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ pypi_name[0] }}/${{ pypi_name }}/${{ pypi_name }}-${{ version }}.tar.gz
-  sha256: ca2f7e1ddc4d0f093ee41d50cc01b6a924d157ebe9713561e64ce7153a693b89
+  sha256: c035d0f8e5ef066d983b7a893b52068e0abccd84d17ed73a6bcf4797cd5a3cc0
 
 build:
   number: 0
